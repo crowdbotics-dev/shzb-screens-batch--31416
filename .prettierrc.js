@@ -1,6 +1,9 @@
 module.exports = {
-  semi: false,
-  parser: "babel",
+  bracketSpacing: true,
+  jsxBracketSameLine: true,
+  singleQuote: false,
+  quotes: "double",
   trailingComma: "none",
-  arrowParens: "avoid"
+  arrowParens: "avoid",
+  endOfLine: "auto"
 }
