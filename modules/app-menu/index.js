@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { OptionsContext, GlobalOptionsContext } from "@options";
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, ScrollView } from "react-native";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
 
 function AppMenu() {
@@ -16,32 +16,31 @@ function AppMenu() {
 
 function AppRoutes({ options }) {
   const navigation = useNavigation();
-  const routes = useNavigationState((state) =>
-    state.routeNames.filter((name) => name !== options.title)
+  const routes = useNavigationState(state =>
+    state.routeNames.filter(name => name !== options.title)
   );
 
   const pressed = ({ pressed }) => [
     pressed ? options.styles.buttonPressed : options.styles.buttonNotPressed,
     options.styles.button
   ];
-  const links = routes.map((route) => {
+  const links = routes.map(route => {
     return (
       <Pressable
         onPress={() => navigation.navigate(route)}
         style={pressed}
-        key={route}
-      >
+        key={route}>
         <Text style={options.styles.buttonText}>{route}</Text>
       </Pressable>
     );
   });
   return (
-    <View>
+    <ScrollView>
       <Text style={options.styles.text}>
         {options.copy}({routes.length})
       </Text>
       {links}
-    </View>
+    </ScrollView>
   );
 }
 
@@ -59,7 +58,7 @@ function GlobalOptions({ options }) {
       <Text style={options.styles.text}>
         Global options({Object.entries(global).length})
       </Text>
-      {globalInfo}
+      {/* {globalInfo} */}
     </View>
   );
 }
