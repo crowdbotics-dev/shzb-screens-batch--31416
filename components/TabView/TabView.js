@@ -67,8 +67,14 @@ const tabViewStyles = StyleSheet.create({
     flexDirection: "row"
   },
   selected: {
-    shadowColor: "gray",
-    elevation: 10
+    shadowColor: "rgba(0, 0, 0, 0.5)",
+    elevation: 10,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 5
   },
   unSelected: {
     backgroundColor: "#f1f1f1"
