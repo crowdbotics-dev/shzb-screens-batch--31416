@@ -3,7 +3,7 @@ const Button = params => {
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,
-    borderColor: params.outlineColor || backgroundColor,
+    borderColor: params.borderColor || backgroundColor,
     borderWidth: 1
   };
   const btnText = {

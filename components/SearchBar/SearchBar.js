@@ -21,6 +21,8 @@ const Input = props => {
         autoCapitalize="none"
         autoCorrect={false}
         multiline={props.textArea ? true : false}
+        backgroundColor={props.backgroundColor}
+        secureTextEntry={props.secureTextEntry}
       />
       {props.errorText ? (
         <Text style={inputStyles.error}>{props.errorText}</Text>
