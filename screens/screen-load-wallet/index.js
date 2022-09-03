@@ -83,7 +83,6 @@ const LoadWallet = () => {
               trackColor={{ false: "#767577", true: "#e5e5e5" }}
               thumbColor={selectedCurrency === currency ? "#12D790" : "#000"}
               style={styles.switch}
-              thumbStyle={styles.switchThumb}
             />
           </View>
         ))}
@@ -203,10 +202,6 @@ const styles = StyleSheet.create({
   },
   switch: {
     transform: [{ scaleX: 0.9 }, { scaleY: 0.9 }]
-  },
-  switchThumb: {
-    borderColor: "#12D790",
-    borderWidth: 1
   }
 });
 
