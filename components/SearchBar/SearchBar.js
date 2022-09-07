@@ -28,12 +28,7 @@ const Input = props => {
         <Text style={inputStyles.error}>{props.errorText}</Text>
       ) : null}
       {props.icon ? (
-        <Image
-          source={props.icon}
-          style={
-            props.text ? inputStyles.iconWithText : inputStyles.iconWithoutText
-          }
-        />
+        <Image source={props.icon} style={inputStyles.iconWithText} />
       ) : null}
       <View style={styles.children}>{props.children}</View>
     </View>
@@ -64,15 +59,7 @@ const inputStyles = StyleSheet.create({
   iconWithText: {
     position: "absolute",
     right: 30,
-    top: 48,
-    width: 15,
-    height: 15,
-    resizeMode: "contain"
-  },
-  iconWithoutText: {
-    position: "absolute",
-    right: 30,
-    top: 28,
+    bottom: 25,
     width: 15,
     height: 15,
     resizeMode: "contain"
