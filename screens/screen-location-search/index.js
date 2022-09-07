@@ -27,7 +27,7 @@ const LocationSearch = () => {
           <Switch
             value={useMyLocation}
             onValueChange={() => setUseMyLocation(!useMyLocation)}
-            trackColor={{ false: "#767577", true: "#e5e5e5" }}
+            trackColor={{ false: "#e5e5e5", true: "#e5e5e5" }}
             thumbColor={useMyLocation ? "#000" : "#000"}
             style={styles.switch}
           />

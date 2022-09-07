@@ -80,7 +80,7 @@ const NFTBondConditions = () => {
             <Switch
               value={isEnabled}
               onValueChange={() => setIsEnabled(!isEnabled)}
-              trackColor={{ false: "#767577", true: "#e5e5e5" }}
+              trackColor={{ false: "#e5e5e5", true: "#e5e5e5" }}
               thumbColor={isEnabled ? "#000" : "#000"}
               style={styles.switch}
             />
