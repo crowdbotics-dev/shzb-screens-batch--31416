@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Image, TextInput } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TextInput,
+  ScrollView
+} from "react-native";
 
 const ContactDetails = () => {
   const [firstName, setFirstName] = useState("");
@@ -8,38 +15,40 @@ const ContactDetails = () => {
   const [phone, setPhone] = useState("");
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.roundIconContainer}>
-          <Image
-            source={require("./assets/videoIcon.png")}
-            style={styles.icon}
-          />
+      <ScrollView>
+        <View style={styles.header}>
+          <View style={styles.roundIconContainer}>
+            <Image
+              source={require("./assets/videoIcon.png")}
+              style={styles.icon}
+            />
+          </View>
         </View>
-      </View>
-      <Input
-        text="First Name"
-        value={firstName}
-        onChange={setFirstName}
-        containerStyle={styles.input}
-      />
-      <Input
-        text="Last Name"
-        value={lastName}
-        onChange={setLastName}
-        containerStyle={styles.input}
-      />
-      <Input
-        text="Email Address"
-        value={email}
-        onChange={setEmail}
-        containerStyle={styles.input}
-      />
-      <Input
-        text="Phone Number"
-        value={phone}
-        onChange={setPhone}
-        containerStyle={styles.input}
-      />
+        <Input
+          text="First Name"
+          value={firstName}
+          onChange={setFirstName}
+          containerStyle={styles.input}
+        />
+        <Input
+          text="Last Name"
+          value={lastName}
+          onChange={setLastName}
+          containerStyle={styles.input}
+        />
+        <Input
+          text="Email Address"
+          value={email}
+          onChange={setEmail}
+          containerStyle={styles.input}
+        />
+        <Input
+          text="Phone Number"
+          value={phone}
+          onChange={setPhone}
+          containerStyle={styles.input}
+        />
+      </ScrollView>
     </View>
   );
 };

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Pressable, TextInput } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Pressable,
+  TextInput,
+  ScrollView
+} from "react-native";
 
 const LinkBankAccount = () => {
   const [bankName, setBankName] = useState("");
@@ -7,33 +14,35 @@ const LinkBankAccount = () => {
   const [password, setPassword] = useState("");
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Link Bank Account</Text>
-      <View style={styles.warningContainer}>
-        <Text style={styles.warningText}>
-          By providing your bank credentials, you are enabling the app or API to
-          retrieve your financial data.
-        </Text>
-      </View>
-      <Input
-        text="Bank Name"
-        value={bankName}
-        onChange={setBankName}
-        containerStyle={styles.input}
-      />
-      <Input
-        text="Account Name"
-        value={accountName}
-        onChange={setAccountName}
-        containerStyle={styles.input}
-      />
-      <Input
-        text="Password"
-        value={password}
-        onChange={setPassword}
-        containerStyle={styles.input}
-        secureTextEntry
-      />
-      <Button buttonText="Submit" style={styles.button} />
+      <ScrollView>
+        <Text style={styles.heading}>Link Bank Account</Text>
+        <View style={styles.warningContainer}>
+          <Text style={styles.warningText}>
+            By providing your bank credentials, you are enabling the app or API
+            to retrieve your financial data.
+          </Text>
+        </View>
+        <Input
+          text="Bank Name"
+          value={bankName}
+          onChange={setBankName}
+          containerStyle={styles.input}
+        />
+        <Input
+          text="Account Name"
+          value={accountName}
+          onChange={setAccountName}
+          containerStyle={styles.input}
+        />
+        <Input
+          text="Password"
+          value={password}
+          onChange={setPassword}
+          containerStyle={styles.input}
+          secureTextEntry
+        />
+        <Button buttonText="Submit" style={styles.button} />
+      </ScrollView>
     </View>
   );
 };

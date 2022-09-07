@@ -5,49 +5,52 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  Pressable
+  Pressable,
+  ScrollView
 } from "react-native";
 
 const ConferenceMeeting = () => {
   const [meetingID, setMeetingID] = useState("");
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.roundIconContainer}>
-          <Image
-            source={require("./assets/videoIcon.png")}
-            style={styles.icon}
-          />
+      <ScrollView>
+        <View style={styles.header}>
+          <View style={styles.roundIconContainer}>
+            <Image
+              source={require("./assets/videoIcon.png")}
+              style={styles.icon}
+            />
+          </View>
+          <View style={styles.roundIconContainer}>
+            <Image
+              source={require("./assets/voiceIcon.png")}
+              style={styles.icon}
+            />
+          </View>
+          <View style={styles.roundIconContainer}>
+            <Image
+              source={require("./assets/phoneIcon.png")}
+              style={styles.icon}
+            />
+          </View>
         </View>
-        <View style={styles.roundIconContainer}>
-          <Image
-            source={require("./assets/voiceIcon.png")}
-            style={styles.icon}
-          />
-        </View>
-        <View style={styles.roundIconContainer}>
-          <Image
-            source={require("./assets/phoneIcon.png")}
-            style={styles.icon}
-          />
-        </View>
-      </View>
-      <Text style={styles.heading}>Meeting ID</Text>
-      <Input
-        placeholder="Enter Meeting ID"
-        value={meetingID}
-        onChange={setMeetingID}
-        containerStyle={styles.input}
-      />
-      <Button buttonText="Enter Meeting" style={styles.button} hideShadow />
-      <Button
-        buttonText="+ Create Meeting"
-        style={styles.button}
-        hideShadow
-        outlineColor="#000"
-        color="#fff"
-        textColor="#000"
-      />
+        <Text style={styles.heading}>Meeting ID</Text>
+        <Input
+          placeholder="Enter Meeting ID"
+          value={meetingID}
+          onChange={setMeetingID}
+          containerStyle={styles.input}
+        />
+        <Button buttonText="Enter Meeting" style={styles.button} hideShadow />
+        <Button
+          buttonText="+ Create Meeting"
+          style={styles.button}
+          hideShadow
+          outlineColor="#000"
+          color="#fff"
+          textColor="#000"
+        />
+      </ScrollView>
     </View>
   );
 };

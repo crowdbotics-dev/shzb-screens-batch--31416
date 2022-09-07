@@ -6,7 +6,8 @@ import {
   TextInput,
   Pressable,
   Switch,
-  Image
+  Image,
+  ScrollView
 } from "react-native";
 import { Slider } from "react-native-elements";
 
@@ -21,65 +22,69 @@ const LocationSearch = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.flexRow}>
-          <Text style={styles.heading}>Use my location</Text>
-          <Switch
-            value={useMyLocation}
-            onValueChange={() => setUseMyLocation(!useMyLocation)}
-            trackColor={{ false: "#e5e5e5", true: "#e5e5e5" }}
-            thumbColor={useMyLocation ? "#000" : "#000"}
-            style={styles.switch}
-          />
-        </View>
-        <Input
-          placeholder="Search for a location"
-          value={searchValue}
-          onChange={setSearchValue}
-        />
-        <View style={styles.flexRow}>
-          <Text style={styles.heading}>Mile Range from this location</Text>
-          <Image
-            source={require("./assets/dropdownIcon.png")}
-            style={styles.icon}
-          />
-        </View>
-      </View>
-      <View style={styles.rangeContainer}>
-        {distanceOptions.map((option, index) => (
-          <View key={index} style={styles.flexRow}>
-            <Checkbox
-              value={option === selectedOption}
-              setValue={() => setSelectedOption(option)}
-              style={styles.checkbox}
+      <ScrollView>
+        <View style={styles.header}>
+          <View style={styles.flexRow}>
+            <Text style={styles.heading}>Use my location</Text>
+            <Switch
+              value={useMyLocation}
+              onValueChange={() => setUseMyLocation(!useMyLocation)}
+              trackColor={{ false: "#e5e5e5", true: "#e5e5e5" }}
+              thumbColor={useMyLocation ? "#000" : "#000"}
+              style={styles.switch}
             />
-            <Text style={styles.heading}>{option}</Text>
           </View>
-        ))}
-        {selectedOption === "Custom" && (
-          <Slider
-            style={styles.slider}
-            value={customDistance}
-            onValueChange={setCustomDistance}
-            minimumValue={10}
-            maximumValue={80}
-            step={1}
-            thumbStyle={styles.sliderThumb}
-            trackStyle={styles.sliderTrack}
-            thumbProps={{
-              children: (
-                <View style={styles.sliderTextContainer}>
-                  <Text style={styles.sliderText}>{customDistance} miles</Text>
-                </View>
-              )
-            }}
-            minimumTrackTintColor="#000"
-            maximumTrackTintColor="#ccc"
-            thumbTintColor="#000"
+          <Input
+            placeholder="Search for a location"
+            value={searchValue}
+            onChange={setSearchValue}
           />
-        )}
-      </View>
-      <Button buttonText="Done" style={styles.button} />
+          <View style={styles.flexRow}>
+            <Text style={styles.heading}>Mile Range from this location</Text>
+            <Image
+              source={require("./assets/dropdownIcon.png")}
+              style={styles.icon}
+            />
+          </View>
+        </View>
+        <View style={styles.rangeContainer}>
+          {distanceOptions.map((option, index) => (
+            <View key={index} style={styles.flexRow}>
+              <Checkbox
+                value={option === selectedOption}
+                setValue={() => setSelectedOption(option)}
+                style={styles.checkbox}
+              />
+              <Text style={styles.heading}>{option}</Text>
+            </View>
+          ))}
+          {selectedOption === "Custom" && (
+            <Slider
+              style={styles.slider}
+              value={customDistance}
+              onValueChange={setCustomDistance}
+              minimumValue={10}
+              maximumValue={80}
+              step={1}
+              thumbStyle={styles.sliderThumb}
+              trackStyle={styles.sliderTrack}
+              thumbProps={{
+                children: (
+                  <View style={styles.sliderTextContainer}>
+                    <Text style={styles.sliderText}>
+                      {customDistance} miles
+                    </Text>
+                  </View>
+                )
+              }}
+              minimumTrackTintColor="#000"
+              maximumTrackTintColor="#ccc"
+              thumbTintColor="#000"
+            />
+          )}
+        </View>
+        <Button buttonText="Done" style={styles.button} />
+      </ScrollView>
     </View>
   );
 };
@@ -161,11 +166,9 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   button: {
-    position: "absolute",
-    bottom: 50,
-    left: 0,
-    right: 0,
-    marginHorizontal: 40
+    marginHorizontal: 40,
+    marginTop: 60,
+    marginBottom: 20
   }
 });
 
