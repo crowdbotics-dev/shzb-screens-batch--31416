@@ -288,9 +288,8 @@ const checkboxStyles = StyleSheet.create({
     width: "100%"
   }
 });
-
 const Button = params => {
-  const backgroundColor = params.color || "#000";
+  const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,

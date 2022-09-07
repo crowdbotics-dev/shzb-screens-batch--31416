@@ -46,8 +46,8 @@ const ConferenceMeeting = () => {
           buttonText="+ Create Meeting"
           style={styles.button}
           hideShadow
-          outlineColor="#000"
-          color="#fff"
+          borderColor="#000"
+          backgroundColor="#fff"
           textColor="#000"
         />
       </ScrollView>
@@ -181,13 +181,12 @@ const inputStyles = StyleSheet.create({
   },
   children: {}
 });
-
 const Button = params => {
-  const backgroundColor = params.color || "#000";
+  const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,
-    borderColor: params.outlineColor || backgroundColor,
+    borderColor: params.borderColor || backgroundColor,
     borderWidth: 1
   };
   const btnText = {

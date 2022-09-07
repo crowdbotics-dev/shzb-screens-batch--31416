@@ -263,13 +263,12 @@ const inputTokenStyles = StyleSheet.create({
     resizeMode: "contain"
   }
 });
-
 const Button = params => {
-  const backgroundColor = params.color || "#000";
+  const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,
-    borderColor: params.outlineColor || backgroundColor,
+    borderColor: params.borderColor || backgroundColor,
     borderWidth: 1
   };
   const btnText = {
@@ -297,6 +296,12 @@ const buttonStyles = StyleSheet.create({
   },
   shadowContainer: {
     shadowColor: "rgba(0, 0, 0, 0.5)",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
     elevation: 10,
     backgroundColor: "#fff",
     borderRadius: 10

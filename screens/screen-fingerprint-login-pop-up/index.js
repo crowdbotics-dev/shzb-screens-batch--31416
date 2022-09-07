@@ -17,8 +17,8 @@ const FingerprintLoginPopUp = () => {
         <Button buttonText="Allow Touch ID" style={styles.button} hideShadow />
         <Button
           buttonText="Don't Allow"
-          outlineColor="#000"
-          color="#fff"
+          borderColor="#000"
+          backgroundColor="#fff"
           textColor="#000"
           hideShadow
           style={styles.button}
@@ -73,13 +73,12 @@ const styles = StyleSheet.create({
 });
 
 export default FingerprintLoginPopUp;
-
 const Button = params => {
-  const backgroundColor = params.color || "#000";
+  const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,
-    borderColor: params.outlineColor || backgroundColor,
+    borderColor: params.borderColor || backgroundColor,
     borderWidth: 1
   };
   const btnText = {

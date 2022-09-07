@@ -80,8 +80,8 @@ const ARDevices = () => {
               <Button
                 buttonText="Discard"
                 style={styles.modalButton}
-                color="#fff"
-                outlineColor="#000"
+                backgroundColor="#fff"
+                borderColor="#000"
                 textColor="#000"
                 hideShadow={true}
                 onPress={() => setModalVisible(!modalVisible)}
@@ -181,13 +181,12 @@ const styles = StyleSheet.create({
 });
 
 export default ARDevices;
-
 const Button = params => {
-  const backgroundColor = params.color || "#000";
+  const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
     backgroundColor: backgroundColor,
-    borderColor: params.outlineColor || backgroundColor,
+    borderColor: params.borderColor || backgroundColor,
     borderWidth: 1
   };
   const btnText = {
