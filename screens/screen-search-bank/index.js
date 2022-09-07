@@ -223,8 +223,8 @@ const inputStyles = StyleSheet.create({
     position: "absolute",
     right: 30,
     bottom: 25,
-    width: 15,
-    height: 15,
+    width: 20,
+    height: 20,
     resizeMode: "contain"
   },
   textArea: {
