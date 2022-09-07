@@ -176,7 +176,6 @@ const bulletTextStyles = StyleSheet.create({
     fontSize: 12
   }
 });
-
 const Button = params => {
   const backgroundColor = params.backgroundColor || "#000";
   const textColor = params.textColor || "#fff";
