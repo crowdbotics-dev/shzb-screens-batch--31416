@@ -72,8 +72,9 @@ const SelectBankAccounts = () => {
             </View>
             <Checkbox
               value={selectedAccounts.includes(account)}
-              setValue={() => {}}
-              white={selectedAccounts.includes(account)}
+              setValue={() => handleAccountSelection(account)}
+              color="#000"
+              activeColor="#fff"
             />
           </Pressable>
         ))}
@@ -173,7 +174,11 @@ const Checkbox = props => {
             ? require("./assets/checkboxIconActive.png")
             : require("./assets/checkboxIcon.png")
         }
-        style={[checkboxStyles.checkbox, props.white && checkboxStyles.white]}
+        style={[
+          checkboxStyles.checkbox,
+          props.color && { tintColor: props.color },
+          props.activeColor && props.value && { tintColor: props.activeColor }
+        ]}
       />
     </Pressable>
   );
@@ -186,10 +191,8 @@ const checkboxStyles = StyleSheet.create({
   },
   checkbox: {
     height: "100%",
-    width: "100%"
-  },
-  white: {
-    tintColor: "#fff"
+    width: "100%",
+    tintColor: "#000"
   }
 });
 
