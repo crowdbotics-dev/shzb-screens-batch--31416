@@ -11,7 +11,11 @@ const Checkbox = props => {
             ? require("./assets/checkboxIconActive.png")
             : require("./assets/checkboxIcon.png")
         }
-        style={[checkboxStyles.checkbox]}
+        style={[
+          checkboxStyles.checkbox,
+          props.color && { tintColor: props.color },
+          props.activeColor && props.value && { tintColor: props.activeColor }
+        ]}
       />
     </Pressable>
   );
@@ -24,6 +28,7 @@ const checkboxStyles = StyleSheet.create({
   },
   checkbox: {
     height: "100%",
-    width: "100%"
+    width: "100%",
+    tintColor: "#000"
   }
 });
