@@ -28,7 +28,11 @@ const Input = props => {
         <Text style={inputStyles.error}>{props.errorText}</Text>
       ) : null}
       {props.icon ? (
-        <Image source={props.icon} style={inputStyles.iconWithText} />
+        <Pressable
+          onPress={() => props.iconOnPress()}
+          style={inputStyles.iconWithText}>
+          <Image source={props.icon} style={inputStyles.icon} />
+        </Pressable>
       ) : null}
       <View style={styles.children}>{props.children}</View>
     </View>
@@ -60,8 +64,15 @@ const inputStyles = StyleSheet.create({
     position: "absolute",
     right: 30,
     bottom: 25,
-    width: 15,
-    height: 15,
+    width: 20,
+    height: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1
+  },
+  icon: {
+    width: "100%",
+    height: "100%",
     resizeMode: "contain"
   },
   textArea: {
