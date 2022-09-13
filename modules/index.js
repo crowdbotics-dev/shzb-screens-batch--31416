@@ -2,7 +2,7 @@ import mods from "./*/index.js";
 import { getModules } from "./modules.js";
 
 export const modules = getModules(mods);
-export const initialRoute = "screenSignup2";
+export const initialRoute = "screenStaking";
 // export const initialRoute = modules[0].value.title;
 export const slices = modules
   .filter(mod => mod.value.slice)
