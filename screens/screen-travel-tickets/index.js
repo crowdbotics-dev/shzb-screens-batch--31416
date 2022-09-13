@@ -499,10 +499,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center"
   },
-  counter: {
-    // justifyContent: "center",
-    // alignItems: "center"
-  },
   counterIcon: {
     width: 10,
     height: 10,
@@ -528,7 +524,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     width: 200,
-    // flex: 1,
     justifyContent: "center"
   },
   columnNumber: {
