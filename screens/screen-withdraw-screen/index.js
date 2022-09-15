@@ -8,7 +8,7 @@ import {
   TextInput
 } from "react-native";
 
-const WithdrawScreen = () => {
+const Withdraw = () => {
   const [user, setUser] = useState({});
   const [withdrawAmount, setWithdrawAmount] = useState("00");
   useEffect(() => {
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default WithdrawScreen;
+export default Withdraw;
 
 const format = (value, currency, precesion) => {
   const parts = value && value.toFixed(precesion).toString().split(".");
