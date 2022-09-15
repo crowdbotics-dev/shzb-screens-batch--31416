@@ -8,7 +8,6 @@ const TravelTickets = () => {
   const [selectedClass, setSelectedClass] = useState(0);
   const [seats, setSeats] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
-  let count = 1;
   useEffect(() => {
     setSeats([
       [
@@ -406,9 +405,6 @@ const TravelTickets = () => {
                 <View key={index1} style={styles.side}>
                   {side.map((seat, index2) => (
                     <View key={index2}>
-                      {index2 < 3 && (
-                        <Text style={styles.columnNumber}>{count++}</Text>
-                      )}
                       <Seat
                         status={seat.status}
                         selected={selectedSeats.includes(seat)}
@@ -696,10 +692,11 @@ const Seat = ({ status, onPress, selected }) => {
 
 const seatStyles = StyleSheet.create({
   seatContainer: {
-    width: 43,
-    height: 40,
+    width: 50,
+    height: 50,
     backgroundColor: "black",
     margin: 4,
-    borderRadius: 10
+    borderRadius: 10,
+    marginHorizontal: 10
   }
 });
