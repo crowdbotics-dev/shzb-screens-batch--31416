@@ -5,7 +5,8 @@ import {
   StyleSheet,
   TextInput,
   ScrollView,
-  Pressable
+  Pressable,
+  Image
 } from "react-native";
 
 const SubscriptionTrial = () => {

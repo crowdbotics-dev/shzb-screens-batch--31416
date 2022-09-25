@@ -225,7 +225,7 @@ const MeetingsList = () => {
             <View style={styles.meetingFooter}>
               {item.usersJoined &&
                 item.usersJoined.map(
-                  (item, index) =>
+                  (item_, index) =>
                     index < 4 && (
                       <View style={styles.userContainer} key={index}>
                         <View

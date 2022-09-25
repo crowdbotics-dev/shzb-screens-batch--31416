@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Pressable,
   TextInput,
-  ScrollView
+  ScrollView,
+  Image
 } from "react-native";
 
 const LinkBankAccount = () => {
