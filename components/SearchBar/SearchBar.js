@@ -21,17 +21,18 @@ const Input = props => {
         autoCapitalize="none"
         autoCorrect={false}
         multiline={props.textArea ? true : false}
+        backgroundColor={props.backgroundColor}
+        secureTextEntry={props.secureTextEntry}
       />
       {props.errorText ? (
         <Text style={inputStyles.error}>{props.errorText}</Text>
       ) : null}
       {props.icon ? (
-        <Image
-          source={props.icon}
-          style={
-            props.text ? inputStyles.iconWithText : inputStyles.iconWithoutText
-          }
-        />
+        <Pressable
+          onPress={() => props.iconOnPress()}
+          style={inputStyles.iconWithText}>
+          <Image source={props.icon} style={inputStyles.icon} />
+        </Pressable>
       ) : null}
       <View style={styles.children}>{props.children}</View>
     </View>
@@ -62,17 +63,16 @@ const inputStyles = StyleSheet.create({
   iconWithText: {
     position: "absolute",
     right: 30,
-    top: 48,
-    width: 15,
-    height: 15,
-    resizeMode: "contain"
+    bottom: 25,
+    width: 20,
+    height: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1
   },
-  iconWithoutText: {
-    position: "absolute",
-    right: 30,
-    top: 28,
-    width: 15,
-    height: 15,
+  icon: {
+    width: "100%",
+    height: "100%",
     resizeMode: "contain"
   },
   textArea: {
